@@ -1,0 +1,26 @@
+{
+  "name": "bdd-todo-app-node",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --format @cucumber/pretty-formatter"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmadanymamlouk/bdd-todo-app-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmadanymamlouk/bdd-todo-app-node/issues"
+  },
+  "homepage": "https://github.com/tmadanymamlouk/bdd-todo-app-node#readme",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@cucumber/pretty-formatter": "^1.0.1",
+    "chai": "^5.1.2"
+  }
+}

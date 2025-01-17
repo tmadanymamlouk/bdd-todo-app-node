@@ -11,7 +11,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        node-version: [14, 16, 18]
     steps:
       # Schritt 1: Repository auschecken
       - name: Checkout repository
@@ -21,7 +23,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # Wähle deine Node.js-Version
+          node-version: ${{ matrix.node-version }} # Wähle deine Node.js-Version
 
       # Schritt 3: Abhängigkeiten installieren
       - name: Install dependencies

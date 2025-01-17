@@ -1,0 +1,32 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Schritt 1: Repository auschecken
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Schritt 2: Node.js einrichten
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Wähle deine Node.js-Version
+
+      # Schritt 3: Abhängigkeiten installieren
+      - name: Install dependencies
+        run: npm install
+
+      # Schritt 4: Tests ausführen
+      - name: Run tests
+        run: npm test

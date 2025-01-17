@@ -11,9 +11,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14,16,18]
 
     steps:
       # Schritt 1: Repository auschecken

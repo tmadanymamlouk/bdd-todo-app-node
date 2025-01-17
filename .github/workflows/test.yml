@@ -33,3 +33,11 @@ jobs:
       # Schritt 4: Tests ausführen
       - name: Run tests
         run: npm test
+
+      - name: PR Title Check
+        uses: actions/github-script@v6
+        with:
+          script: |
+            if (!context.payload.pull_request.title.startsWith("Feature:")) {
+               core.setFailed("PR must start with 'Feature:'");
+            }
